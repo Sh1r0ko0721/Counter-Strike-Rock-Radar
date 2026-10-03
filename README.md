@@ -19,7 +19,7 @@
 类似jojo面板的战力评级展示系统。通过高度自定义的六维雷达图、粒子动画和流畅的视觉过渡效果，生动呈现不同角色的各项能力数值。
 
 介绍视频：https://www.bilibili.com/video/BV1vpckzhEJJ?vd_source=e933b15469ba782736f46bb7dfec1577
-![example](https://github.com/user-attachments/assets/1a9f31da-f0da-4b42-9bad-c443429b0344)
+![效果展示.png](https://pictureurl.com/api/storage/file?key=u%2Fanon%2F28daed73-4a7c-4659-93ba-28947fa9f374-____.png)
 
 ## 核心特性
 
