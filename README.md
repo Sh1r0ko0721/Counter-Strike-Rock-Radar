@@ -1,4 +1,20 @@
-# Rock Radar - 战力雷达图 / 动态评级面板
+# Rock-Radar（魔改）
+
+> 本项目基于(https://github.com/TablemanLiu/Rock-Radar)修改。
+> 原作者：Tableman(https://github.com/TablemanLiu))
+
+## 修改项目
+
+- 修改大量页面布局
+- 增加了大量动画
+- 增加了老5E数据，新5E数据，完美WE显示模板
+
+## 许可证
+
+原项目版权归原作者所有。
+本项目沿用原项目许可证，详见 LICENSE。
+
+# Counter-Strike Rock-Radar - 战力雷达图 / 动态评级面板
 
 类似jojo面板的战力评级展示系统。通过高度自定义的六维雷达图、粒子动画和流畅的视觉过渡效果，生动呈现不同角色的各项能力数值。
 
@@ -14,80 +30,6 @@
 - ✨ **粒子背景交互**：内置高性能 Canvas 粒子库，渲染出富有科技感和动感的视觉背景。
 
 
-## 快速自定义指南
-
-### 1. 基础全局配置
-在 `index.html` 的 `CONFIG` 对象中，你可以修改以下参数：
-
-```javascript
-const CONFIG = {
-    RADAR_SCALE: 1.0,            // 雷达图底图大小缩放比例 (默认 1.0)
-    RADAR_GRID_LEVELS: 5,        // 雷达图底图行数（圈数）
-    RADAR_GRID_LINE_WIDTH: 3,    // 雷达图底图线条粗细
-    RADAR_GRID_LINE_OPACITY: 0.2, // 雷达图底图线条透明度
-    PARTICLE_OPACITY_MULT: 2.0,  // 背景粒子特效透明度倍率
-    PARTICLE_SIZE_MULT: 2.0,     // 背景粒子特效大小倍率
-    VERTEX_COUNT: 6,             // 雷达图顶点数（默认为 6 边形，可改为 8 边形等）,一定要把DIM_NAMES等数组内容也改成对应的个数!
-    INTRO_WAIT_TIME: 5000,       // 开场页面的等待时间（毫秒）
-    
-    // 维度名称：修改这里可改变雷达图的各个能力节点名称
-    DIM_NAMES: ["创新性", "旋律", "歌词", "影响力", "主唱", "乐器"],
-    // 满分基准：设置雷达图内圈各轴建议的最大值
-    BASE_MAX_SCORES: [10, 10, 10, 10, 10, 10], 
-    // 下限设定：限制各轴显示的最低分（通常设为 0）
-    MIN_SCORES: [0, 0, 0, 0, 0, 0], 
-    // 切换显示时，雷达各项数值生长动画的过渡时间 (ms)
-    ANIM_DURATION: 1500, 
-    // 是否启用特殊的数值格式化（如雷达图的实际值在 11-19 时显示为 "10+"）
-    ENABLE_SPECIAL_FORMAT: true, 
-    // 默认每页的的展示时长 (ms)
-    DEFAULT_DURATION: 5000, 
-    // 是否显示描述文字(乐评)
-    SHOW_DESC: true,
-    // 图片默认缩放比例 (1.0 为原始大小)
-    IMAGE_SCALE: 1.0, 
-    // 哪些维度显示为百分数（例如 0.7 变为 70%）。数组长度需与顶点数对应，true 表示显示为百分数，false 表示显示为普通数字
-    USE_PERCENTAGE: [false, false, false, false, false, false],
-    // 维度名称距离雷达图外圈的距离 (px)，默认 80
-    LABEL_MARGIN: 80, 
-    // 是否根据 points 中写的小数位数自动控制显示的小数精度
-    USE_AUTO_PRECISION: true, 
-    // 是否将评分数值显示在维度名称下方
-    SHOW_SCORE_UNDER_NAME: true, 
-};
-```
-
-### 2. 添加数据（角色/乐队/项目）
-在 `index.html` 中搜索并修改 `const bands = [...]`。每个对象代表一个展示页：
-
-```javascript
-{
-    name: "展示名称",
-    scores: [10, 8, 9, 7, 8, 8], // 对应的六个维度分值
-    desc: "关于此项的详细描述文字",
-    colorIndex: 0, // 背景粒子的颜色，对应 COLOR_PRESETS 索引 (0-19)
-    duration: 5000  // 停留显示的时长（毫秒），不填则使用 CONFIG.DEFAULT_DURATION，默认为5000毫秒
-}
-```
-示例：
-```javascript
-{ name: "The Beatles", points: [15, 15, 10, 20, 10, 10], desc: "无需多言", colorIndex: 12 ,duration: 6000 },
-```
-
-### 3. 高级视觉自定义 (CSS 变量)
-在 `index.html` 的 `:root` 选择器中，你可以通过修改颜色变量快速切换主题色：
-- `--theme-color`: 主亮色（辉光色）
-- `--bg-color-1` / `--bg-color-2`: 渐变背景的起始与结束色
-- `mvplist` 见视频介绍
-
-## 文件夹结构
-```
-📁 根目录
-│
-├── 📁 pic
-│   └──  🖼️ 角色图片
-├── 📄 index.html
-└── 🎵 music.mp3
-```
-- **如何添加图片？** 根目录下创建一个pic目录，然后把图片命名为（角色/乐队/项目）名并放进去就行了。
-- **如何添加音乐？** 自行添加music.mp3。
+- **如何添加图片？** 根目录下创建一个pic目录，将人物图片放入，改名为对应角色名即可
+- **如何添加音乐？** 根目录下创建一个mus目录，将音乐放入，改名为对应角色名即可
+- **如何添加背景图？** 将图片放入，改名为：（角色名）1，即可
